@@ -1,0 +1,39 @@
+product = 12 * 10
+print(product)
+
+remainder=1398%11
+print(remainder)
+
+
+skill_completed = "Python Syntax"
+exercises_completed = 13
+#The amount of points for each exercise may change, because points don't exist yet
+points_per_exercise = 5
+point_total = 100
+point_total += exercises_completed * points_per_exercise
+
+print("I got " +  str(point_total) + " points!")
+
+
+# Escaping characters
+escape_special = 'This isn\'t flying, this is falling with style!'
+print(escape_special)
+
+
+
+# Access by Index
+fifth_letter = "MONTY"[4]
+print(fifth_letter)
+
+fifth_letter = "MONTY"[-1]
+print(fifth_letter)
+
+
+# String methods
+str = "STR"
+l = len(str)
+print(l)
+
+# Dot notation
+lowercase = str.lower()
+print(lowercase)
