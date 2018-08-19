@@ -25,8 +25,8 @@ if (a != c) :
   print("a!=c if executed")
   print("a!=c if ended")
 else :
-  print("a<>c else")
-  print("a<>c else ended")
+  print("a!=c else")
+  print("a!=c else ended")
  
 
 
