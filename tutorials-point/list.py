@@ -52,7 +52,7 @@ print("list function")
 print("list:", num_list)
 
 num_list.extend(range(11,15))
-print(num_list, ".extend(range(11,15)): ", num_list)
+print("list.extend(range(11,15)): ", num_list)
 
 num_list.append(1)
 print("list.append(1): ", num_list)
@@ -61,4 +61,4 @@ print(num_list, ".count(1): ", num_list.count(1))
 print(num_list, ".index(1): ", num_list.index(1))
 
 num_list.insert(5, 100)
-print("list.insert(100, 1): ", num_list)
+print("list.insert(5, 100): ", num_list)
