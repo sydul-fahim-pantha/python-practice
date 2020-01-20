@@ -2,22 +2,17 @@
 
 if __name__ == "__main__":
     n, m = map(int, input().split())
-    set_n = set(map(int, input().split(" ", n)))
+    set_n = list(map(int, input().split(" ", n)))
     
-    dict_set_n = dict.fromkeys(set_n, 0)
-    for i in set_n: dict_set_n[i] += 1
-
     set_a = set(map(int, input().split(" ", m)))
     set_b = set(map(int, input().split(" ", m)))
     
-    #set_n_a_b_intersection = set(dict_set_n.keys()).intersection(set_a.union(set_b))) 
-    
     happy = 0
     for i in set_a: 
-        if dict_set_n.get(i): happy += dict_set_n[i]
+        if i in set_n: happy += 1
 
     for i in set_b: 
-        if dict_set_n.get(i): happy -= dict_set_n[i]
+        if i in set_n: happy -= -1
 
     print(happy)
 
