@@ -1,0 +1,4 @@
+{
+    "python.linting.enabled": true,
+    "python.pythonPath": "/home/sydul/.virtualenvs/augmedix-asr/bin/python"
+}
