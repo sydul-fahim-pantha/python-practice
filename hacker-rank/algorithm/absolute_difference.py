@@ -18,7 +18,7 @@ def minimumAbsoluteDifference(arr):
     return last_diff
 
 if __name__ == '__main__':
-    fptr = open('/home/sydul/Work/all_git_repos/personal_sydul_fahim_pantha/python-practice/hacker-rank/algorithm/output_file.txt', 'w')
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input())
 
