@@ -6,28 +6,31 @@ import os
 def beautifulPairs(A, B):
     A.sort()
     B.sort()
-    
-    # prepare pairs
-    beautiful_pairs = []
+
+    l = []
     for i, a in enumerate(A):
-        for j, b in enumerate(B): 
-            if (a == b):  beautiful_pairs.append([i, j])
-            elif a < b: break
-
-    print(beautiful_pairs)
-
-    # find index to remove
-    repeating_items_index = []
-    for i in range(len(beautiful_pairs) - 1): 
-        if beautiful_pairs [i][0] == beautiful_pairs[i + 1][0] or beautiful_pairs [i][1] == beautiful_pairs[i + 1][1]: 
-            repeating_items_index.append(i)
+        for j, b in enumerate(B):
+            if (a == b): l.append([i, j])
     
-    print('>>>>>>>>>>>>>>>>>.', set(A) - set(B))
-    print(beautiful_pairs)
-    print(repeating_items_index)
-    print(len(beautiful_pairs) - len(repeating_items_index))
-    print(len(beautiful_pairs) - len(repeating_items_index) + (1 if len(set(A) - set(B)) > 0 else 0))
-    return len(beautiful_pairs) - len(repeating_items_index) + (1 if len(set(A) - set(B)) > 0 else 0)
+    for i in range(len(l) - 1):
+        if l[i][0] != -1: 
+            for j in range(i + 1, len(l)):
+                if l[i][0] == l[j][0] or l[i][1] == l[j][1]: 
+                    l[j][0] = -1
+                    l[j][1] = -1
+     
+    total_pair_count = len(l)
+    
+    for i in range(len(l)): 
+        if l[i][0] == -1: total_pair_count -= 1
+
+    if len(set(A) - set(B)) > 0: total_pair_count += 1
+    elif len(A) == total_pair_count: total_pair_count -= 1
+
+    diff = len(set(A) - set(B))
+    print(len(A) - diff +1 if diff else len(A) - 1)
+        
+    return len(A) - diff +1 if diff else len(A) - 1
 
 
 if __name__ == '__main__':
